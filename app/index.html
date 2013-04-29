@@ -1,28 +1,50 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en" data-ng-app="myApp">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>PGS Car Pooling</title>
+  
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/bootstrap-responsive.css">
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container" data-ng-include="'partials/menu-logged-in.html'">
+            </div>
+<!--            <div class="container" data-ng-include="'partials/menu.html'">
+            </div>-->
 
-  <div ng-view></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="span12" data-ng-view>
 
-  <div>Angular seed app: v<span app-version></span></div>
+            </div>
+        </div>
+    </div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-  -->
-  <script src="lib/angular/angular.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
+    <footer class="footer">
+        <div class="container">
+            <p>PGS Car Pooling v. <span data-app-version></span></p>
+        </div>
+    </footer>
+    
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    -->
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/bootstrap-collapse.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
 </body>
 </html>
