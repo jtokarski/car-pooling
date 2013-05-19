@@ -1,2 +1,4 @@
 temp
 dist
+/nbproject/private/
+/pooling-server/node_modules/
