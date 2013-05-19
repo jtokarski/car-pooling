@@ -1,0 +1,25 @@
+{
+  "name" : "pooling-server",
+  "description" : "(pending)",
+  "version" : "0.1.0",
+  "main" : "./pooling-server.js",
+  "author" : {
+    "name" : "borsuk",
+    "email" : ""
+  },
+  "keywords" : [ ],
+  "licenses" : {
+    "type" : "none"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/YOUR_LOGIN/pooling-server.git"
+  },
+  "bugs" : {
+    "web" : "http://github.com/YOUR_LOGIN/pooling-server/issues"
+  },
+  "dependencies" : {
+    "adclient" : ">=0.9.9",
+    "express" : ">=3.2.4"
+  }
+}
