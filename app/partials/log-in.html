@@ -2,9 +2,20 @@
         <h1>PGS Car Pooling</h1>
         <p>Prosty sposób na dojazdy do i z pracy.</p>
         
-        <p>TODO: login form</p>
+        <form>
+            <table>
+                <tr>
+                    <td>Login: </td>
+                    <td><input data-ng-model="loginCredentials.username" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Hasło: </td>
+                    <td><input data-ng-model="loginCredentials.password" type="password" /></td>
+                </tr>
+            </table>
+        </form>
         
         <p>
-            <a class="btn btn-primary btn-large">Log in</a>
+            <a class="btn btn-primary btn-large" data-ng-click="authenticate()" >Log in</a>
         </p>
     </div>

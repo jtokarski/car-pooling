@@ -29,9 +29,35 @@ function DashboardController($scope) {
     $scope.transitRequests.push(templateTransitRequest);
     $scope.transitRequests.push(templateTransitRequest);
     $scope.transitRequests.push(templateTransitRequest);
+    
 }
 DashboardController.$inject = ['$scope'];
 
-function AuthorizationController($scope) {
+function AuthorizationController( $rootScope, $scope, $location, CPUserSrv) {
+    
+    $scope.loginCredentials = {
+        'domain': 'pgs-soft.com',
+        'username': '',
+        'password': ''
+    };
+    
+    
+    $scope.authenticate = function () {
+
+        $rootScope.user = new CPUserEntity('jtokarski', CPUserEntity.prototype.ROLE_USER_FULL ); 
+        
+        
+//        CPUserSrv.login( $scope.loginCredentials ).
+//            success(function(data, status, headers, config) {
+//                if ( data.status && data.status == 'success') {
+//
+//                    $location.path('/');
+//                }
+//            }).error(function(data, status, headers, config) {
+//                
+//            });
+//        
+    }
+    
 }
-AuthorizationController.$inject = ['$scope'];
+AuthorizationController.$inject = ['$rootScope','$scope','$location','CPUserSrv'];
