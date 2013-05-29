@@ -1,14 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 var http = require('http');
-http.createServer(function(req, res) {
-    res.writeHead(200, {
-        'Content-Type': 'text/plain'
-    });
-    
-    res.end('Hello World.\n');
-    
-}).listen(9080, "");
+
+var port = process.env.PORT || 4000;
+var server = http.createServer(require('./app'))
+server.listen(port, function () {
+    console.log("Express server listening on " + port);
+});
