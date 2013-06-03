@@ -5,7 +5,7 @@
         <div class="transits">
             <h2>Odjazdy</h2>
 
-            <div data-ng-repeat="transit in transits" class="transit">
+            <div data-ng-repeat="transit in transits|filter:{type:'offer'}" class="transit">
             <table class="table-condensed">
                 <tr>
                     <th>Od:</th>
@@ -38,7 +38,7 @@
         <div class="transit-requests">
             <h2>Zapytania</h2>
 
-            <div data-ng-repeat="transit in transitRequests" class="transit">
+            <div data-ng-repeat="transit in transits|filter:{type:'request'}" class="transit">
                 <table class="table-condensed">
                     <tr>
                         <th>Od:</th>

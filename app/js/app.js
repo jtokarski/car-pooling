@@ -2,9 +2,15 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('carPoolingApp', ['carPoolingApp.filters', 'carPoolingApp.services', 'carPoolingApp.directives']).
-  config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+angular.module('carPoolingApp', [
+        'carPoolingApp.filters', 
+        'carPoolingApp.directives',
+        'carPoolingApp.CPUserSrv',
+        'carPoolingApp.transitService',
+        'carPoolingApp.version'
+    ]).
+    config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+//    $locationProvider.html5Mode(true);//FIXME: commented out temporarily - W.Mekal
     $routeProvider.when('/', {
         templateUrl: 'partials/dashboard.html', 
         controller: DashboardController,
@@ -30,7 +36,7 @@ angular.module('carPoolingApp', ['carPoolingApp.filters', 'carPoolingApp.service
     
         $rootScope.$on('$routeChangeStart', function(event, next, current) {
             if ( _.indexOf(next.rolesAllowed, $rootScope.user.role) == -1 ) {
-                $location.path( $rootScope.user.getDefaultRoute() );
+//                $location.path( $rootScope.user.getDefaultRoute() );//FIXME: commented out temporarily - W.Mekal
             }
         });
     
