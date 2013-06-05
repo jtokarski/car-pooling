@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('carPoolingApp.transitService', ['restangular']).
-    factory('TransitService', function(Restangular, $q) {
+    factory('TransitService', function(Restangular, $q, $rootScope) {
         return new function() {
             var templateTransit = {
                 type: 'offer',
@@ -23,6 +23,10 @@ angular.module('carPoolingApp.transitService', ['restangular']).
                 templateTransit,templateTransit,templateTransit,templateTransit,templateTransit,
                 templateTransitRequest,templateTransitRequest,templateTransitRequest
             ];
+            
+            for(var index in transits){
+                transits[index].id = index;
+            }
          
             this.getList = function(dateTimeFrom, dateTimeTo){
                 //TODO: call to backend W.Mekal
@@ -30,16 +34,18 @@ angular.module('carPoolingApp.transitService', ['restangular']).
                 return transits;
             };
 
-            this.onChange = function(dateTimeFrom, dateTimeTo){
-                var defered = $q.defer();
-                
+            this.pollForChanges = function(dateTimeFrom, dateTimeTo){
                 //TODO: call backend - W.Mekal
+                
+                var deferred = $q.defer();
+                                
                 setTimeout(function() {
                     transits[0].at = new Date().toLocaleTimeString();
-                    defered.resolve([transits[0]]);
-                }, 5000);//TODO: it would be nice to call it many times - or publish some event - W.Mekal
+                    deferred.resolve([transits[0]]);
+                    $rootScope.$digest();
+                }, 2000);//TODO: it would be nice to call it many times - or publish some event - W.Mekal
                 
-                return defered.promise;
+                return deferred.promise;
             };
       };
   });
