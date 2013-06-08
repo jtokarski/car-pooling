@@ -46,17 +46,17 @@ angular.module('carPoolingApp.dashboard', [
     
     $scope.transits = TransitService.getList(from, to);
     
-//    $scope.pollChanges = function(){
-//         TransitService//TODO: maybe it will be subscribed as event - W.Mekal
-//            .pollForChanges(from, to)
-//            .then(function(changedTransits){
-//                //TODO: highlight changed transits?
-//                $scope.updateChangedTransits(changedTransits);
-//                
-//                pollingPromise = $timeout($scope.pollChanges, 100);
-//            });
-//    };
-//    $scope.pollChanges();
+    $scope.pollChanges = function(){
+         TransitService//TODO: maybe it will be subscribed as event - W.Mekal
+            .pollForChanges(from, to)
+            .then(function(changedTransits){
+                //TODO: highlight changed transits?
+                $scope.updateChangedTransits(changedTransits);
+                
+                pollingPromise = $timeout($scope.pollChanges, 100);
+            });
+    };
+    $scope.pollChanges();
         
     $scope.$on('$destroy', function() {
         $timeout.cancel(pollingPromise);

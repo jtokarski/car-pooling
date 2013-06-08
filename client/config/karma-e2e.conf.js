@@ -1,5 +1,11 @@
+/** 
+ * From where to look for files, starting with the location of this file.
+ */
 basePath = '../';
 
+/**
+ * This is the list of file patterns to load into the browser during testing.
+ */
 files = [
   ANGULAR_SCENARIO,
   ANGULAR_SCENARIO_ADAPTER,

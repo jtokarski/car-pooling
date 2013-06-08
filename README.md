@@ -11,7 +11,7 @@ To start working with it follow the install instructions from the site executing
 
 ## Development workflow
 
-Run `grunt watch`. It runs unit tests, minifies js and css and creates ready to deployment site in `/dist` folder.
+Run `grunt watch --force`. It runs unit tests, minifies js and css and creates ready to deployment site in `/dist` folder.
 
 ## Typical issues
 
