@@ -1,25 +1,17 @@
 # Developer's guide
 
-## Unit testing
+## How to start?
 
-The simplest is to use [karma](http://karma-runner.github.io/‎).
-Install it first by npm.
+The project is base on [ng-boilerplate][https://github.com/joshdmiller/ng-boilerplate].
+To start working with it follow the install instructions from the site executing two commands below.
 
-`npm install -g karma`
+`npm install`
+`bower install`
 
-Then simply run it from command line using script `scripts/test.bat` or `scripts/test.sh`.
+## Development workflow
 
-## Deployment
+Run `grunt watch`. It runs unit tests, minifies js and css and creates ready to deployment site in `/dist` folder.
 
-Deployment is done via [yeoman](http://yeoman.io) or [grunt](http://gruntjs.com/).
-You have to install following things to make it working.
+## Typical issues
 
-`npm install -g yeoman`
-`npm install -g phantomjs`
-
-When you have all required dependencies you can just run:
-
-`yeoman build --force`
-
-and website with minimized css and js will appeear in `dist` directory.
-
+I had problems with compiling `less` files. I found solution [here][https://github.com/twitter/bootstrap/issues/8088]
