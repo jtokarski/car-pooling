@@ -1,5 +1,5 @@
-temp
-dist
-/nbproject/private/
-/pooling-server/node_modules/
-/node_modules/
+*.sw*
+*~
+dist/
+node_modules/
+vendor/

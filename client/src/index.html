@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-ng-app="carPoolingApp" data-ng-controller="AppCtrl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PGS Car Pooling</title>
+  
+    <!-- your compiles CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/<%= grunt.config.get('pkg.name') %>.css"/>
+
+    <!--[if IE 7>
+    <link rel="stylesheet" href="assets/font-awesome-ie7.min.css>
+    <![endif]-->
+
+    <!-- libs.js contains all of the concatenated third-party libraries -->
+    <script type="text/javascript" src="assets/libs.js"></script>
+
+    <!-- this is your compiled, minified application code -->
+    <script type="text/javascript" src="assets/<%= grunt.config.get('pkg.name') %>.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container" data-ng-include="'menu-logged-in.tpl.html'">
+            </div>
+<!--            <div class="container" data-ng-include="'menu.tpl.html'">
+            </div>-->
+
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="span12" data-ng-view>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>PGS Car Pooling v. <span data-app-version></span></p>
+        </div>
+    </footer>
+  </body>
+</html>
