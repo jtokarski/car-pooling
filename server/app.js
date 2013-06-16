@@ -7,7 +7,9 @@ app.configure(function() {
     app.use(express.favicon());
     app.use(express.bodyParser());
     app.use(express.methodOverride());
-    app.use(express.cookieSession({'key':'NODESESSID', 'cookie':{ path: '/', httpOnly: false, maxAge: null }}));
+    app.use(express.cookieParser());
+    app.use(express.cookieSession({key:'NODESESSID', cookie: { path: '/', httpOnly: false, maxAge: null}, secret:'jfeiqojo'}));
+//    app.use(express.cookieSession({'key':'NODESESSID', 'secret':'', 'cookie':{ path: '/', httpOnly: false, maxAge: null }}));
     
     app.all('*', function (req, res, next) {
         res.header('Access-Control-Allow-Origin', '*');
