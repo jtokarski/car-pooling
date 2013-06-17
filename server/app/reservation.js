@@ -5,13 +5,13 @@ var mongo = require('../mongo'),
     _ = require('underscore')
 
 
-function userService() {
-    _super.apply(this, ["user"])
+function reservationService() {
+    _super.apply(this, ["reservation"])
 }
 
-util.extend(userService, _super)
+util.extend(reservationService, _super)
 
-module.exports = new userService()
+module.exports = new reservationService()
 
 
 

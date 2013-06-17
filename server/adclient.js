@@ -18,8 +18,8 @@ module.exports.open = function open() {
     this.client.createClients(function (err) { if (err) { console.log(err) } })
 }
 
-module.exports.close = function close() {
-    this.client.close()
+module.exports.close = function close(callback) {
+    this.client.close(callback)
 }
 
 module.exports.authUser = function authUser(username, password, callback) {

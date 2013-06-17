@@ -5,13 +5,13 @@ var mongo = require('../mongo'),
     _ = require('underscore')
 
 
-function userService() {
-    _super.apply(this, ["user"])
+function trackService() {
+    _super.apply(this, ["track"])
 }
 
-util.extend(userService, _super)
+util.extend(trackService, _super)
 
-module.exports = new userService()
+module.exports = new trackService()
 
 
 

@@ -26,8 +26,11 @@ describe('ad-client', function () {
     })
     
     it ('closes successfully in the end', function (done) {
-        adclient.close()
-        done()
+        adclient.close(function (err, res) {
+            if (err) console.log(err)
+            if (res) console.log(res)
+            done()
+        })
     })
 })
 
